@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sum of red cells</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+span {
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff6c60;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Sum of red cells:</h1>
+    <p id="sum"></p>
+    
+    <script>
+      // Javascript code to extract sum from query parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const sum = urlParams.get('sum');
+      document.getElementById('sum').textContent = sum;
+    </script>
+  </body>
+</html>

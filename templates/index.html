@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Reset default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Center the content */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+      }
+      
+      /* Container for the table and button */
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 32px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+      }
+      
+      /* Table styles */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 16px;
+      }
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+        background-color: #fff;
+        cursor: pointer;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      td.red {
+        background-color: #ff4444;
+        color: #fff;
+      }
+      
+      /* Button styles */
+      button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #ff4444;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      }
+      button:hover {
+        background-color: #ff6666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+      </table>
+      
+      <button onclick="calculateSum()">Calculate the sum</button>
+    </div>
+    
+    <script>
+      // Javascript code to change the cell's background color
+      const cells = document.querySelectorAll('td');
+      cells.forEach((cell, index) => {
+        cell.addEventListener('click', () => {
+          cell.classList.toggle('red');
+        });
+        cell.textContent = index + 1; // add cell numbering
+      });
+      
+      // Javascript code to calculate the sum of the red cells
+      function calculateSum() {
+        const redCells = document.querySelectorAll('.red');
+        let sum = 0;
+        redCells.forEach(cell => {
+          sum += parseInt(cell.textContent);
+        });
+        window.location.href = `sum.html?sum=${sum}`; // navigate to sum page with sum parameter
+      }
+    </script>
+  </body>
+</html>
